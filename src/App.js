@@ -16,12 +16,14 @@ const App = () => {
                 descr="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos animi inventore sed nobis modi, neque quaerat at maxime ratione, officia nulla ducimus, impedit expedita suscipit? Debitis rerum neque maiores eaque?"
                 colorBg="#e2e2e2"
                 urlBg={bgImg}
-            /><Layout
+            />
+            <Layout
                 title="Title-2"
                 descr="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos animi inventore sed nobis modi, neque quaerat at maxime ratione, officia nulla ducimus, impedit expedita suscipit? Debitis rerum neque maiores eaque?"
                 colorBg="#e2e2e2"
                 urlBg=""
-            /><Layout
+            />
+            <Layout
                 title="Title-3"
                 descr="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos animi inventore sed nobis modi, neque quaerat at maxime ratione, officia nulla ducimus, impedit expedita suscipit? Debitis rerum neque maiores eaque?"
                 colorBg="#e2e2e2"
