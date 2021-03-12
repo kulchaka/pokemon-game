@@ -20,7 +20,7 @@ const App = () => {
             <Layout
                 title="Title-2"
                 descr="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos animi inventore sed nobis modi, neque quaerat at maxime ratione, officia nulla ducimus, impedit expedita suscipit? Debitis rerum neque maiores eaque?"
-                // colorBg="red"
+                colorBg="#e2e2e2"
             />
             <Layout
                 title="Title-3"
