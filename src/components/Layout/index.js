@@ -1,6 +1,6 @@
 import l from './style.module.css'
 
-const Layout = ({title, descr, colorBg, urlBg}) => {
+const Layout = ({title, colorBg, urlBg, children}) => {
     // const bgStyle = urlBg ? `url(${urlBg})` : colorBg;
     // console.log(bgStyle);
     const style = {};
@@ -21,9 +21,7 @@ const Layout = ({title, descr, colorBg, urlBg}) => {
                         <span className={l.separator}></span>
                     </div>
                     <div className={`${l.desc} ${l.full}`}>
-                        <p>
-                            {descr}
-                        </p>
+                        {children}
                     </div>
                 </article>
             </div>

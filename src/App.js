@@ -3,6 +3,7 @@ import Layout from "./components/Layout";
 import Footer from "./components/Footer";
 
 import bgImg from './assets/bg1.jpg';
+import lImg from './assets/bg2.jpg';
 
 const App = () => {
     return (
@@ -13,21 +14,31 @@ const App = () => {
             />
             <Layout
                 title="Title-1"
-                descr="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos animi inventore sed nobis modi, neque quaerat at maxime ratione, officia nulla ducimus, impedit expedita suscipit? Debitis rerum neque maiores eaque?"
                 colorBg="#e2e2e2"
                 urlBg={bgImg}
-            />
+            >
+                <p>Some Text...</p>
+                <p>Some Text...</p>
+                <p>Some Text...</p>
+            </Layout>
             <Layout
                 title="Title-2"
-                descr="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos animi inventore sed nobis modi, neque quaerat at maxime ratione, officia nulla ducimus, impedit expedita suscipit? Debitis rerum neque maiores eaque?"
                 colorBg="#e2e2e2"
-            />
+            >
+                <p>Some Text...</p>
+                <p>Some Text...</p>
+                <p>Some Text...</p>
+                <img src={lImg} alt="img"/>
+            </Layout>
             <Layout
                 title="Title-3"
-                descr="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos animi inventore sed nobis modi, neque quaerat at maxime ratione, officia nulla ducimus, impedit expedita suscipit? Debitis rerum neque maiores eaque?"
                 colorBg="#e2e2e2"
                 urlBg={bgImg}
-            />
+            >
+                <p>Some Text...</p>
+                <p>Some Text...</p>
+                <p>Some Text...</p>
+            </Layout>
             <Footer />
         </>
     )
