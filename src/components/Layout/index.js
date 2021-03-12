@@ -1,10 +1,17 @@
 import l from './style.module.css'
 
 const Layout = ({title, descr, colorBg, urlBg}) => {
-    const bgStyle = urlBg ? `url(${urlBg})` : colorBg;
-    console.log(bgStyle);
+    // const bgStyle = urlBg ? `url(${urlBg})` : colorBg;
+    // console.log(bgStyle);
+    const style = {};
+    if(colorBg) {
+        style.backgroundColor = colorBg
+    }
+    if (urlBg) {
+        style.backgroundImage = `url(${urlBg})`
+    }
     return (
-        <section className={l.root} style={{background: bgStyle}}>
+        <section className={l.root} style={style}>
             <div className={l.wrapper}>
                 <article>
                     <div className={l.title}>
