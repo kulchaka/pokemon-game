@@ -8,8 +8,8 @@ const PokemoCard = ({name, img, id, type, values}) => {
     const [isActive, setActive] = useState(false);
 
     const handler = () => {
-        setActive(true);
-        // isActive ? setActive(false) : setActive(true)
+        // setActive(true);
+        isActive ? setActive(false) : setActive(true)
     }
 
 
