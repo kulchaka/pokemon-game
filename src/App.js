@@ -3,6 +3,8 @@ import Layout from "./components/Layout";
 import PokemoCard from "./components/PokemonCard";
 import Footer from "./components/Footer";
 
+import './App.css';
+
 import bgImg from './assets/bg1.jpg';
 
 import POKEMONS from './data/POKEMONS.json';
@@ -25,12 +27,12 @@ const App = () => {
                 <p>Some Text...</p>
             </Layout>
             <Layout
-                title="Title-2"
+                title="Cards"
                 colorBg="#e2e2e2"
             >
             <div className="flex">
               {
-                POKEMONS.map(items => <PokemoCard {...items} />)
+                POKEMONS.map(items => <PokemoCard key={items.id} {...items} />)
               }
             </div>
             </Layout>

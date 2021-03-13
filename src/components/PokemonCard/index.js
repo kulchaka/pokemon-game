@@ -1,14 +1,24 @@
-import p from './index.module.css';
-import cardImg from './assets/card-back-side.jpg'
+import {useState} from 'react';
 
-const PokemoCard = ({name, img, id, type, values, ...props}) => {
-    console.log(props)
+import p from './index.module.css';
+import cardImg from './assets/card-back-side.jpg';
+
+const PokemoCard = ({name, img, id, type, values}) => {
+
+    const [isActive, setActive] = useState(false);
+
+    const handler = () => {
+        setActive(true);
+        // isActive ? setActive(false) : setActive(true)
+    }
+
+
     return (
-        <div className={p.root}>
-            <div className={p.pokemonCard}>
+        <div className={p.root} onClick={handler}>
+            <div className={`${p.pokemonCard} ${isActive ? p.active : ''}`}>
                 <div className={p.cardFront}>
                     <div className={`${p.wrap} ${p.front}`}>
-                        <div className={`${p.pokemon}`}>
+                        <div className={`${p.pokemon} ${p[type]}`}>
                             <div className={p.values}>
                                 <div className={`${p.count} ${p.top}`}>{values.top}</div>
                                 <div className={`${p.count} ${p.right}`}>{values.right}</div>
@@ -38,4 +48,4 @@ const PokemoCard = ({name, img, id, type, values, ...props}) => {
     )
 }
 
-export default PokemoCard
+export default PokemoCard;
