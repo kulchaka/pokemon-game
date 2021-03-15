@@ -4,7 +4,7 @@ import cn from 'classnames'
 import p from './index.module.css';
 import cardImg from './assets/card-back-side.jpg';
 
-const PokemoCard = ({name, img, id, type, values}) => {
+const PokemonCard = ({name, img, id, type, values}) => {
 
     const [isActive, setActive] = useState(false);
 
@@ -50,4 +50,4 @@ const PokemoCard = ({name, img, id, type, values}) => {
     )
 }
 
-export default PokemoCard;
+export default PokemonCard;
