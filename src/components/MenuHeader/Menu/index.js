@@ -5,9 +5,10 @@ const Menu = ({navStatus}) => {
 
     console.log(navStatus, 'MENU')
 
+    const navActive = navStatus ? m.active : m.deactive;
 
     return (
-        <div className={cn(m.menuContainer, { [m.active]: navStatus }, { [m.deactive]: !navStatus })}>
+        <div className={cn(m.menuContainer, navActive)}>
             <div className={m.overlay}/>
             <div className={m.menuItems}>
                 <ul>
