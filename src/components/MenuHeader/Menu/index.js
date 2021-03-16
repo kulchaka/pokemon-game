@@ -1,12 +1,13 @@
 import m from './style.module.css'
 import cn from 'classnames'
 
-const Menu = ({state}) => {
+const Menu = ({navStatus}) => {
 
-    console.log(state, 'MENU')
+    console.log(navStatus, 'MENU')
+
 
     return (
-        <div className={cn(m.menuContainer, { [m.active]: state })}>
+        <div className={cn(m.menuContainer, { [m.active]: navStatus }, { [m.deactive]: !navStatus })}>
             <div className={m.overlay}/>
             <div className={m.menuItems}>
                 <ul>

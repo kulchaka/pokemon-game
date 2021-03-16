@@ -7,14 +7,14 @@ const MenuHeader = () => {
     const [isActive, setNav] = useState(false)
 
     const handlerNav = (bool) => {
-        console.log(bool, 'props')
+        // console.log(bool, 'props')
         setNav(!isActive)
-        console.log(isActive, 'isActive')
+        // console.log(isActive, 'isActive')
     }
 
     return (
         <>
-            <Menu state={isActive} />
+            <Menu navStatus={isActive} />
             <NavBar onClickNav={handlerNav}/>
         </>
     )
