@@ -1,6 +1,7 @@
-const GamePage = () => {
+const GamePage = ({onChangePage}) => {
 
-    const handler = ({onChangePage}) => {
+    const handler = () => {
+        console.log('<GamePage />')
         onChangePage && onChangePage('app')
     }
 
