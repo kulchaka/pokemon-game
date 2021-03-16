@@ -1,3 +1,4 @@
+import MenuHeader from "../../components/MenuHeader";
 import Header from '../../components/Header';
 import Layout from "../../components/Layout";
 import PokemonCard from "../../components/PokemonCard";
@@ -11,6 +12,7 @@ import pika4u from '../../assets/20118-5-pokemon.png';
 import POKEMONS from '../../data/POKEMONS.json';
 
 
+
 const HomePage = ({onChangePage}) => {
 
     const handlerClickButton = (page) => {
@@ -20,6 +22,7 @@ const HomePage = ({onChangePage}) => {
 
     return (
         <>
+            <MenuHeader />
             <Header
                 title="Pokemon Game"
                 descr="This is simple triple triad card game"
