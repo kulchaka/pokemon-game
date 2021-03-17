@@ -7,8 +7,8 @@ const MenuHeader = () => {
     const [isActive, setNav] = useState(false)
 
     const handlerNav = (bool) => {
-        // console.log(bool, 'props')
-        setNav(!isActive)
+        console.log(bool, 'props')
+        setNav(!bool)
         // console.log(isActive, 'isActive')
     }
 
