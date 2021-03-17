@@ -11,8 +11,6 @@ import pika4u from '../../assets/20118-5-pokemon.png';
 
 import POKEMONS from '../../data/POKEMONS.json';
 
-
-
 const HomePage = ({onChangePage}) => {
 
     const handlerClickButton = (page) => {
