@@ -3,20 +3,21 @@ import NavBar from "./NavBar";
 import { useState } from 'react'
 
 
-const MenuHeader = () => {
+const MenuHeader = ({bgActive}) => {
 
-    const [isActive, setNav] = useState(false)
+    const [isOpen, setOpen] = useState(null)
 
-    const handlerNav = (bool) => {
-        console.log(bool, 'props')
-        setNav(!bool)
+    const handlerNav = () => {
+        // console.log(bool, 'props')
+        // setOpen(!bool)
         // console.log(isActive, 'isActive')
+        setOpen(prevState => !prevState)
     }
 
     return (
         <>
-            <Menu navStatus={isActive} />
-            <NavBar onClickNav={handlerNav}/>
+            <Menu isOpen={isOpen} />
+            <NavBar isOpen={isOpen} bgActive={bgActive} onClickNav={handlerNav}/>
         </>
     )
 }

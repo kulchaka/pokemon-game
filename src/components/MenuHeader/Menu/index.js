@@ -21,26 +21,25 @@ const arrMenuNav = [
     }
 ];
 
-const Menu = ({navStatus}) => {
+const Menu = ({ isOpen }) => {
 
-    console.log(navStatus, 'MENU')
-
-    const navActive = navStatus ? m.active : m.deactive;
+    console.log(isOpen, 'MENU')
 
     return (
-        <div className={cn(m.menuContainer, navActive)}>
+        <div className={cn(m.menuContainer, {
+            [m.active]: isOpen === true,
+            [m.deactive]: isOpen === false
+        })}>
             <div className={m.overlay}/>
-            <div className={m.menuItems}>
                 <ul>
                     {
-                        arrMenuNav.map(el => <LinksMenu
+                        arrMenuNav.map((el, index) => (<LinksMenu
                             text={el.text}
                             link={el.link}
-                            key={el.text}
-                        />)
+                            key={index}
+                        />))
                     }
                 </ul>
-            </div>
         </div>
     )
 }

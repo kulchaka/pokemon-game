@@ -1,3 +1,5 @@
+import MenuHeader from "../../components/MenuHeader";
+
 const GamePage = ({onChangePage}) => {
 
     const handler = () => {
@@ -6,10 +8,12 @@ const GamePage = ({onChangePage}) => {
     }
 
     return (
-        <div>
+        <>
+            <MenuHeader bgActive={true} />
             <h1>This is our GAME PAGE!</h1>
             <button onClick={handler}>BACK</button>
-        </div>
+
+        </>
     )
 }
 
