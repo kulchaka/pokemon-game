@@ -1,9 +1,10 @@
 import {useState} from 'react';
+import cn from 'classnames'
 
 import p from './index.module.css';
 import cardImg from './assets/card-back-side.jpg';
 
-const PokemoCard = ({name, img, id, type, values}) => {
+const PokemonCard = ({name, img, id, type, values}) => {
 
     const [isActive, setActive] = useState(false);
 
@@ -16,15 +17,15 @@ const PokemoCard = ({name, img, id, type, values}) => {
 
     return (
         <div className={p.root} onClick={handler}>
-            <div className={`${p.pokemonCard} ${isActive ? p.active : ''}`}>
+            <div className={cn(p.pokemonCard, {[p.active]: isActive})}>
                 <div className={p.cardFront}>
-                    <div className={`${p.wrap} ${p.front}`}>
-                        <div className={`${p.pokemon} ${p[type]}`}>
+                    <div className={cn(p.wrap, p.front)}>
+                        <div className={cn(p.pokemon, p[type])}>
                             <div className={p.values}>
-                                <div className={`${p.count} ${p.top}`}>{values.top}</div>
-                                <div className={`${p.count} ${p.right}`}>{values.right}</div>
-                                <div className={`${p.count} ${p.bottom}`}>{values.bottom}</div>
-                                <div className={`${p.count} ${p.left}`}>{values.left}</div>
+                                <div className={cn(p.count, p.top)}>{values.top}</div>
+                                <div className={cn(p.count, p.right)}>{values.right}</div>
+                                <div className={cn(p.count, p.bottom)}>{values.bottom}</div>
+                                <div className={cn(p.count, p.left)}>{values.left}</div>
                             </div>
                             <div className={p.imgContainer}>
                                 <img src={img} alt={name}/>
@@ -39,7 +40,7 @@ const PokemoCard = ({name, img, id, type, values}) => {
                 </div>
 
                 <div className={p.cardBack}>
-                    <div className={`${p.wrap} ${p.back}`}>
+                    <div className={cn(p.wrap, p.back)}>
                         <img src={cardImg} alt="Сard Backed"/>
                     </div>
                 </div>
@@ -49,4 +50,4 @@ const PokemoCard = ({name, img, id, type, values}) => {
     )
 }
 
-export default PokemoCard;
+export default PokemonCard;
