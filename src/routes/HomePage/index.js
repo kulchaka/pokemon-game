@@ -1,3 +1,5 @@
+import {useHistory} from 'react-router-dom'
+
 import Header from '../../components/Header';
 import Layout from "../../components/Layout";
 import PokemonCard from "../../components/PokemonCard";
@@ -9,11 +11,14 @@ import pika4u from '../../assets/20118-5-pokemon.png';
 
 import POKEMONS from '../../data/POKEMONS.json';
 
-const HomePage = ({onChangePage}) => {
+const HomePage = () => {
+
+    const history = useHistory();
 
     const handlerClickButton = (page) => {
-        console.log('<HomePage />')
-        onChangePage && onChangePage(page)
+        // console.log('<HomePage />')
+        // onChangePage && onChangePage(page)
+        history.push(page)
     }
 
     return (
