@@ -14,6 +14,8 @@ const Header = ({title, descr, onClickButton}) => {
     return (
         <header className={h.root}>
             <div className={h.forest}></div>
+            <div className={h.silhouette}></div>
+            <div className={h.moon}></div>
             <div className={h.container}>
                 <h1>{title}</h1>
                 <p>{descr}</p>
