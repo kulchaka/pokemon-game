@@ -21,10 +21,7 @@ const arrMenuNav = [
     }
 ];
 
-const Menu = ({ isOpen }) => {
-
-    console.log(isOpen, 'MENU')
-
+const Menu = ({ isOpen, deActiveNav }) => {
     return (
         <div className={cn(m.menuContainer, {
             [m.active]: isOpen === true,
@@ -34,6 +31,7 @@ const Menu = ({ isOpen }) => {
                 <ul>
                     {
                         arrMenuNav.map(({text, link}, index) => (<LinksMenu
+                            onClickLink={deActiveNav}
                             text={text}
                             link={link}
                             key={index}

@@ -1,8 +1,6 @@
-import MenuHeader from "../../components/MenuHeader";
 import Header from '../../components/Header';
 import Layout from "../../components/Layout";
 import PokemonCard from "../../components/PokemonCard";
-import Footer from "../../components/Footer";
 
 import s from './style.module.css';
 

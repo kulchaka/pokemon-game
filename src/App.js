@@ -2,8 +2,8 @@ import {useRouteMatch, Route, Switch, Redirect} from "react-router-dom";
 import s from './style.module.css'
 import cn from 'classnames'
 
-import HomePage from "./routes/Home";
-import GamePage from "./routes/Game";
+import HomePage from "./routes/HomePage";
+import GamePage from "./routes/GamePage";
 import MenuHeader from "./components/MenuHeader";
 import Footer from "./components/Footer";
 
