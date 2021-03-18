@@ -1,10 +1,12 @@
+import {Link} from "react-router-dom";
+
 const LinksMenu = ({text, link}) => {
     return (
         <>
             <li>
-                <a href={link}>
+                <Link to={link}>
                     {text}
-                </a>
+                </Link>
             </li>
         </>
     )

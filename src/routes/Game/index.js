@@ -1,22 +1,23 @@
-import MenuHeader from "../../components/MenuHeader";
+import {useHistory} from 'react-router-dom'
 import s from './style.module.css'
-import Footer from "../../components/Footer";
+
 
 const GamePage = ({onChangePage}) => {
 
+    const history = useHistory();
+
     const handler = () => {
-        console.log('<GamePage />')
-        onChangePage && onChangePage('app')
+        // console.log('<GamePage />')
+        // onChangePage && onChangePage('app')
+        history.push('/')
     }
 
     return (
         <>
-            <MenuHeader bgActive />
             <div className={s.container}>
-            <h1>This is our GAME PAGE!</h1>
-            <button onClick={handler}>BACK</button>
+                <h1>This is our GAME PAGE!</h1>
+                <button onClick={handler}>BACK</button>
             </div>
-            <Footer />
 
         </>
     )

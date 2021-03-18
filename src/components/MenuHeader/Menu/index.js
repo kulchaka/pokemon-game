@@ -5,19 +5,19 @@ import LinksMenu from "./LinksMenu";
 const arrMenuNav = [
     {
         text: 'HOME',
-        link: '#welcome'
+        link: '/'
     },
     {
         text: 'GAME',
-        link: '#game'
+        link: 'game'
     },
     {
         text: 'ABOUT',
-        link: '#about'
+        link: 'about'
     },
     {
         text: 'CONTACT',
-        link: '#contact'
+        link: 'contact'
     }
 ];
 
@@ -33,9 +33,9 @@ const Menu = ({ isOpen }) => {
             <div className={m.overlay}/>
                 <ul>
                     {
-                        arrMenuNav.map((el, index) => (<LinksMenu
-                            text={el.text}
-                            link={el.link}
+                        arrMenuNav.map(({text, link}, index) => (<LinksMenu
+                            text={text}
+                            link={link}
                             key={index}
                         />))
                     }

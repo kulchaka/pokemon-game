@@ -20,7 +20,6 @@ const HomePage = ({onChangePage}) => {
 
     return (
         <>
-            <MenuHeader />
             <Header
                 title="Pokemon Game"
                 descr="This is simple triple triad card game"
@@ -67,7 +66,6 @@ const HomePage = ({onChangePage}) => {
                     card will be captured and turned into the opponent's color. If the player's rank is higher, the
                     opponent's card will be captured and changed into the player's color instead. </p>
             </Layout>
-            <Footer/>
         </>
     )
 }
