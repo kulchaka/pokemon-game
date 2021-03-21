@@ -9,13 +9,16 @@ const GamePage = () => {
 
     // const [pokemonz, setPokemons] = useState(() => POKEMONS.map(el => ({ ...el, active: false })))
     const [pokemonz, setPokemons] = useState({})
-    const handlerCard = (id) => {
-        // console.log('#### ID:', id)
+    const handlerCard = (key) => {
+        console.log('#### KEY:', key)
+
         setPokemons(prevState => {
             return Object.entries(prevState).reduce((acc, item) => {
                 const pokemon = {...item[1]};
-                if (pokemon.id === id) {
-                    pokemon.active = true;
+                const pokemonKey = item[0];
+                // console.log('#### ID:', item[0])
+                if (pokemonKey === key) {
+                    pokemon.active = !pokemon.active;
                 }
 
 
@@ -54,7 +57,7 @@ const GamePage = () => {
                             key={key}
                             name={name}
                             img={img}
-                            id={id}
+                            id={key}
                             type={type}
                             values={values}
                             clickCard={handlerCard}
