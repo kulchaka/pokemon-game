@@ -1,10 +1,12 @@
-const LinksMenu = ({text, link}) => {
+import {Link} from "react-router-dom";
+
+const LinksMenu = ({text, link, onClickLink}) => {
     return (
         <>
-            <li>
-                <a href={link}>
+            <li onClick={onClickLink}>
+                <Link to={link}>
                     {text}
-                </a>
+                </Link>
             </li>
         </>
     )
