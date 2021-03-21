@@ -38,7 +38,7 @@ const GamePage = () => {
     }
 
     useEffect(() => {
-        database.ref('pokemons').once('value', (snapshot) => {
+        database.ref('pokemons').on('value', (snapshot) => {
             console.log('####DATABase:', snapshot.val())
             setPokemons(snapshot.val())
         })
@@ -52,29 +52,6 @@ const GamePage = () => {
         history.push('/')
     }
 
-    const dargon = {
-        abilities: ["keen-eye","tangled-feet","big-pecks"],
-        base_experience: 157,
-        height: 8,
-        img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
-        name: "dragon",
-        stats: {
-            ck: 49,
-            defense: 49,
-            hp: 45,
-            "special-attack": 65,
-            "special-defense": 65,
-            speed: 45
-        },
-        type: "normal",
-        values: {
-            bottom: 7,
-            left: 7,
-            right: "H",
-            top: 6
-        },
-        weight: 650
-    }
 
     const addPokemon = () => {
         const newKey = database.ref().child('pokemons').push().key;
@@ -98,9 +75,9 @@ const GamePage = () => {
                 bottom: 7,
                 left: 7,
                 right: "H",
-                top: 6
+                top: 7
             },
-            weight: 650
+            weight: 888
         });
     }
 
