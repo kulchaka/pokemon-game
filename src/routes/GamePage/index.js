@@ -2,7 +2,26 @@ import {useHistory} from 'react-router-dom'
 import s from './style.module.css'
 import POKEMONS from "../../data/POKEMONS.json";
 import PokemonCard from "../../components/PokemonCard";
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
+
+import firebase from "firebase";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBmYiwrKAK4VuMaxmQXZzD5CYdUOLx6078",
+    authDomain: "pokemon-cardz.firebaseapp.com",
+    databaseURL: "https://pokemon-cardz-default-rtdb.firebaseio.com",
+    projectId: "pokemon-cardz",
+    storageBucket: "pokemon-cardz.appspot.com",
+    messagingSenderId: "258144951272",
+    appId: "1:258144951272:web:53b2060a3ca2ba60b2625d"
+};
+
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+database.ref('pokemons').once('value', (snapshot) => {
+    console.log('####DATABase:', snapshot.val())
+})
 
 
 const GamePage = () => {
@@ -13,6 +32,10 @@ const GamePage = () => {
         // console.log('#### ID:', id)
         setPokemons(prevState => prevState.map(item => item.id === id ? { ...item, active: !item.active } : item))
     }
+
+    useEffect(() => {
+        console.log(pokemonz)
+    })
 
     const history = useHistory();
 
