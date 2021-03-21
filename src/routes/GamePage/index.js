@@ -52,12 +52,64 @@ const GamePage = () => {
         history.push('/')
     }
 
+    const dargon = {
+        abilities: ["keen-eye","tangled-feet","big-pecks"],
+        base_experience: 157,
+        height: 8,
+        img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+        name: "dragon",
+        stats: {
+            ck: 49,
+            defense: 49,
+            hp: 45,
+            "special-attack": 65,
+            "special-defense": 65,
+            speed: 45
+        },
+        type: "normal",
+        values: {
+            bottom: 7,
+            left: 7,
+            right: "H",
+            top: 6
+        },
+        weight: 650
+    }
+
+    const addPokemon = () => {
+        const newKey = database.ref().child('pokemons').push().key;
+        console.log(newKey)
+        database.ref('pokemons/' + newKey).set({
+            abilities: ["keen-eye","tangled-feet","big-pecks"],
+            base_experience: 157,
+            height: 8,
+            img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+            name: "dragon",
+            stats: {
+                ck: 49,
+                defense: 49,
+                hp: 45,
+                "special-attack": 65,
+                "special-defense": 65,
+                speed: 45
+            },
+            type: "normal",
+            values: {
+                bottom: 7,
+                left: 7,
+                right: "H",
+                top: 6
+            },
+            weight: 650
+        });
+    }
+
     return (
         <>
             <div className={s.container}>
                 <>
                     <h1>This is our GAME PAGE!</h1>
-                    <button onClick={handler}>BACK</button>
+                    <button onClick={addPokemon}>ADD NEW POKEMON</button>
                 </>
                 <div className={s.flex}>
                     {
@@ -73,6 +125,9 @@ const GamePage = () => {
                         />)
                     }
                 </div>
+                <>
+                    <button onClick={handler}>BACK</button>
+                </>
             </div>
 
         </>
