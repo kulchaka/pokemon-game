@@ -1,27 +1,37 @@
 import {useHistory} from 'react-router-dom'
 import s from './style.module.css'
-import POKEMONS from "../../data/POKEMONS.json";
+// import POKEMONS from "../../data/POKEMONS.json";
 import PokemonCard from "../../components/PokemonCard";
 import {useEffect, useState} from 'react'
 import database from "../../service/firebase";
 
-database.ref('pokemons').once('value', (snapshot) => {
-    console.log('####DATABase:', snapshot.val())
-})
-
-
 const GamePage = () => {
 
-    const [pokemonz, setPokemons] = useState(() => POKEMONS.map(el => ({ ...el, active: false })))
-
+    // const [pokemonz, setPokemons] = useState(() => POKEMONS.map(el => ({ ...el, active: false })))
+    const [pokemonz, setPokemons] = useState({})
     const handlerCard = (id) => {
         // console.log('#### ID:', id)
-        setPokemons(prevState => prevState.map(item => item.id === id ? { ...item, active: !item.active } : item))
+        setPokemons(prevState => {
+            return Object.entries(prevState).reduce((acc, item) => {
+                const pokemon = {...item[1]};
+                if (pokemon.id === id) {
+                    pokemon.active = true;
+                }
+
+
+                acc[item[0]] = pokemon;
+
+                return acc;
+            }, {});
+        });
     }
 
     useEffect(() => {
-        console.log(pokemonz)
-    })
+        database.ref('pokemons').once('value', (snapshot) => {
+            console.log('####DATABase:', snapshot.val())
+            setPokemons(snapshot.val())
+        })
+    }, [])
 
     const history = useHistory();
 
@@ -35,13 +45,13 @@ const GamePage = () => {
         <>
             <div className={s.container}>
                 <>
-                <h1>This is our GAME PAGE!</h1>
-                <button onClick={handler}>BACK</button>
+                    <h1>This is our GAME PAGE!</h1>
+                    <button onClick={handler}>BACK</button>
                 </>
                 <div className={s.flex}>
                     {
-                        pokemonz.map(({ id, name, img, type, values, active}) => <PokemonCard
-                            key={id}
+                        Object.entries(pokemonz).map(([key, {id, name, img, type, values, active}]) => <PokemonCard
+                            key={key}
                             name={name}
                             img={img}
                             id={id}
