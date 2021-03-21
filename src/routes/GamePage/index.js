@@ -18,6 +18,17 @@ const GamePage = () => {
                 const pokemonKey = item[0];
                 // console.log('#### ID:', item[0])
                 if (pokemonKey === key) {
+
+                    database.ref('pokemons/' + pokemonKey).update({
+                        active: !pokemonz[pokemonKey].active
+                    }, (error) => {
+                        if (error) {
+                            console.log('ERROR')
+                        } else {
+                            console.log('Data saved successfully!')
+                        }
+                    });
+
                     pokemon.active = !pokemon.active;
                 }
                 acc[item[0]] = pokemon;
