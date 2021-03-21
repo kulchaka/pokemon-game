@@ -4,19 +4,23 @@ import cn from 'classnames'
 import p from './index.module.css';
 import cardImg from './assets/card-back-side.jpg';
 
-const PokemonCard = ({name, img, id, type, values}) => {
+const PokemonCard = ({name, img, id, type, values, isActive, clickCard}) => {
 
-    const [isActive, setActive] = useState(false);
-
-    const handler = () => {
-        // setActive(true);
-        // isActive ? setActive(false) : setActive(true)
-        setActive(!isActive)
+    const onClickCard = () => {
+        clickCard && clickCard(id)
     }
+
+    // const [isActive, setActive] = useState(false);
+
+    // const handler = () => {
+    //     // setActive(true);
+    //     // isActive ? setActive(false) : setActive(true)
+    //     setActive(!isActive)
+    // }
 
 
     return (
-        <div className={p.root} onClick={handler}>
+        <div className={p.root} onClick={onClickCard}>
             <div className={cn(p.pokemonCard, {[p.active]: isActive})}>
                 <div className={p.cardFront}>
                     <div className={cn(p.wrap, p.front)}>
