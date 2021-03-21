@@ -17,10 +17,7 @@ const GamePage = () => {
                 if (pokemon.id === id) {
                     pokemon.active = true;
                 }
-
-
                 acc[item[0]] = pokemon;
-
                 return acc;
             }, {});
         });
