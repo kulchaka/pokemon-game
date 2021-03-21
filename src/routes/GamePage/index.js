@@ -10,7 +10,7 @@ const GamePage = () => {
     // const [pokemonz, setPokemons] = useState(() => POKEMONS.map(el => ({ ...el, active: false })))
     const [pokemonz, setPokemons] = useState({})
     const handlerCard = (key) => {
-        console.log('#### KEY:', key)
+        // console.log('#### KEY:', key)
 
         setPokemons(prevState => {
             return Object.entries(prevState).reduce((acc, item) => {
