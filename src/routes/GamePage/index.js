@@ -10,7 +10,7 @@ const GamePage = () => {
     const [pokemonz, setPokemons] = useState(() => POKEMONS.map(el => ({ ...el, active: false })))
 
     const handlerCard = (id) => {
-        console.log('#### ID:', id)
+        // console.log('#### ID:', id)
         setPokemons(prevState => prevState.map(item => item.id === id ? { ...item, active: !item.active } : item))
     }
 
